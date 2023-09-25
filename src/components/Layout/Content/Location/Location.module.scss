@@ -1,0 +1,46 @@
+.location-container{
+    position: relative;
+    top: 300px;
+    align-self: flex-start;
+    left: 112px;
+    padding-bottom: 50px;
+
+    h2{
+        color: var(--white);
+        font-size: 32px;
+        font-weight: 700;
+    }
+}
+
+.location{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+    width: 1300px;
+    height: 200px;
+
+}
+
+.kerry,.bali,.sydney,.paris{
+    background-image: url('../../../../assets/images/kerry.png');
+    background-repeat: no-repeat;
+    width: 300px;
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 24px;
+    font-weight: 400;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 12px;
+    padding-left: 8px;
+}
+.bali{
+    background-image: url('../../../../assets/images/bali.png');
+}
+.sydney{
+    background-image: url('../../../../assets/images/sydney.png');
+}
+.paris{
+    background-image: url('../../../../assets/images/paris.png');
+}

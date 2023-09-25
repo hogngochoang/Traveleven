@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './pages/Home'
+import Login from './pages/Login'
+import routes from "./config/routes";
+import { useContext, useEffect } from "react";
+import { UserContext } from "./UserContext";
 
 function App() {
+  const {user, login} = useContext(UserContext);
+
+  useEffect(() => {
+    if(localStorage.getItem("token")){
+      login(localStorage.getItem("email"), localStorage.getItem("token"))
+    }
+  }, [])
+
+  console.log(user)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route path={routes.home} element={<Home />} />
+            <Route path={routes.login} element={<Login />}/>
+          </Routes>
+        </div>
+      </Router>
   );
 }
 
