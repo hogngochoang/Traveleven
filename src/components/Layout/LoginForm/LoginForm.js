@@ -5,7 +5,7 @@ import { loginAPI } from '~/services/LoginService';
 import { Slide, ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import routes from "../../../config/routes";
 import { UserContext } from '~/UserContext';
 
@@ -70,6 +70,10 @@ function LoginForm() {
                     Google
                 </button>
             </div>
+
+            <Link className={cx('btn-back')} to={routes.home}> Quay về trang chủ</Link>
+
+
             <ToastContainer 
                 position="top-center"
                 autoClose={3000}

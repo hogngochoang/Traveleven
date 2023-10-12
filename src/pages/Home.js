@@ -4,11 +4,11 @@ import Content from "~/components/Layout/Content/Content";
 
 function Home() {
     return ( 
-        <body>
+        <div>
             <Header />
             
             <Content />
-        </body>
+        </div>
 
      );
 }
